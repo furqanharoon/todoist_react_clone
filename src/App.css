@@ -1,0 +1,8 @@
+.navbar{
+  position: fixed;
+  z-index: 10 !important;
+}
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+  top: 56px !important;
+  z-index: 2 !important;
+}
