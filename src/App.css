@@ -1,8 +1,190 @@
-.navbar{
-  position: fixed;
-  z-index: 10 !important;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav__bar{
+    background: #514392;
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-  top: 56px !important;
-  z-index: 2 !important;
+.drop__down{
+    z-index: 10;
+}
+.project_button{
+    background: #6300B0;
+    background-blend-mode: darken;
+    border-radius: 20px;
+    width: 108px;
+    height: 27px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.side_bar{
+    height: auto;
+    width: 250px;
+    padding: 20px;
+    background: #6E5CC2;
+}
+.height__100vh{
+    /* height: 100vh !important; */
+    height: auto;
+    padding-bottom: 50px;
+}
+.side_bar p{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.side_bar input{
+    width: 171px;
+    height: 30px;
+}
+.side_bar .cancel_button{
+    background: #CD5260;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.side_bar .save_button{
+    width: 70px;
+    height: 30px;
+    background: #646464;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+/* .side_bar #hide_div{
+    display: none;
+} */
+.mobile_side{
+    width: 295px;
+    height: auto;
+}
+.mobile_side p{
+    /* background: linear-gradient(180deg, rgba(208, 41, 61, 0.92) 80.83%, rgba(208, 41, 61, 0) 100%); */
+    width: auto;
+    height: 37px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: capitalize;
+    color: #000;
+}
+.mobile_side input{
+    width: auto;
+    height: 32px;
+}
+.mobile_side .cancel_button{
+    background: #CD5260;
+    border-radius: 15px;
+    width: 110px;
+    height: 42px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.mobile_side .save_button{
+    width: 110px;
+    height: 42px;
+    background: #646464;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+/* .mobile_side #hide_mob{
+    display: none;
+} */
+.project_list{
+    /* padding-left: 120px; */
+    cursor: pointer;
+    text-align: left;
+}
+.project_list li{
+    margin: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    text-transform: capitalize;
+    color: #FFFFFF;
+    position: relative;
+}
+.project_list li::before{
+    content: '';
+    background-image: url(assets/icons/Ellipse\ 1.svg);
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+/* .project_list li:before{
+    content: '•';
+    margin-right: 5px;
+} */
+.today{
+    border: 1px solid #4E0BA3;
+    border-radius: 20px;
+    background: transparent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    color: #000000;
+}
+.today:hover{
+    background: #4E0BA3;
+    color: #fff;
+}
+input[type=checkbox]{
+    width: 15px;
+    height: 15px;
+}
+label span{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px !important;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #000000;
+}
+.task_input{
+    width: 385px;
+    height: 30px;
+    border-radius: 4px;
+}
+.task_textarea{
+    width: 385px;
+    border-radius: 4px;
 }
