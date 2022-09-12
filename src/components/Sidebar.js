@@ -91,12 +91,12 @@ export default function IndexPage() {
                       />
                     </div>
                     <div>
-                      <button class="mr-3 bg-red-500  text-white font-bold py-2 px-4 rounded cancel_button">
+                      <button className="mr-3 bg-gray-300  text-dark font-bold py-2 px-4 rounded cancel_button">
                         Cancel
                       </button>
                       <button
                         onClick={() => addToFirestore()}
-                        class="bg-gray-500  text-white font-bold py-2 px-4 rounded save_button"
+                        className="bg-green-400 text-white font-bold py-2 px-4 rounded save_button"
                       >
                         Add
                       </button>
@@ -133,16 +133,9 @@ export default function IndexPage() {
                     <li className="text-center pl- cursor-pointer text-white text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
                       <p className="mb-6">Projects</p>
                       <ul className="text- project_list">
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>Three</li>
-                        <li>Four</li>
-                        <li>Five</li>
-                        <li>Six</li>
-                        <li>Seven</li>
-                        <li>Eight</li>
-                        <li>Nine</li>
-                        <li>Ten</li>
+                        {projects.map((item, index) => {
+                          return <li>{item.title}</li>;
+                        })}
                       </ul>
                       <button
                         onClick={() => setAddShow(!addShow)}
@@ -159,13 +152,18 @@ export default function IndexPage() {
                               className="mb-4 shadow appearance-none border rounded w-full w-44 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                               type="text"
                               placeholder="Project name"
+                              onChange={(e) => setinputValue(e.target.value)}
+                              value={inputValue}
                             />
                           </div>
                           <div>
-                            <button class="mr-3 bg-red-500  text-white font-bold py-2 px-4 rounded cancel_button">
+                            <button className="mr-3 bg-gray-300 text-dark font-bold py-2 px-4 rounded cancel_button">
                               Cancel
                             </button>
-                            <button class="bg-gray-500  text-white font-bold py-2 px-4 rounded save_button">
+                            <button
+                              onClick={() => addToFirestore()}
+                              className="bg-green-400 text-white font-bold py-2 px-4 rounded save_button"
+                            >
                               Add
                             </button>
                           </div>

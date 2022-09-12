@@ -46,7 +46,7 @@
     height: 30px;
 }
 .side_bar .cancel_button{
-    background: #CD5260;
+    /* background: #CD5260; */
     border-radius: 4px;
     width: 70px;
     height: 30px;
@@ -56,12 +56,12 @@
     /* identical to box height */
     text-align: center;
     text-transform: capitalize;
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
 }
 .side_bar .save_button{
     width: 70px;
     height: 30px;
-    background: #646464;
+    /* background: #646464; */
     border-radius: 4px;
     font-weight: 700;
     font-size: 14px;
@@ -92,7 +92,7 @@
     height: 32px;
 }
 .mobile_side .cancel_button{
-    background: #CD5260;
+    /* background: #CD5260; */
     border-radius: 15px;
     width: 110px;
     height: 42px;
@@ -102,12 +102,12 @@
     /* identical to box height */
     text-align: center;
     text-transform: capitalize;
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
 }
 .mobile_side .save_button{
     width: 110px;
     height: 42px;
-    background: #646464;
+    /* background: #646464; */
     border-radius: 15px;
     font-weight: 700;
     font-size: 18px;

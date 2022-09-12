@@ -3,7 +3,7 @@ export default function Content() {
   const [taskShow, setTaskShow] = useState(false);
   return (
     <div className="pl-7 pt-7">
-      <div class="grid md:grid-cols-5 ">
+      <div className="grid md:grid-cols-5 ">
         <button className="today mr-3 font-bold py-2 px-4 rounded mb-3">
           Today
         </button>
@@ -17,29 +17,41 @@ export default function Content() {
       <div className="mt-7">
         <p className="text-center">Project Name</p>
       </div>
-      <div class="md:flex mb-6">
-        <label class="block  font-bold">
-          <input class="mr-2 leading-tight" type="checkbox" />
-          <span class="text-sm">Send me your newsletter!</span>
-        </label>
+      <div className="mb-6">
+        <div className="md:flex">
+          <label class="block  font-bold">
+            <input class="mr-2 leading-tight" type="checkbox" />
+            <span class="text-sm">Send me your newsletter!</span>
+          </label>
+        </div>
+        <p>Description</p>
       </div>
-      <div class="md:flex mb-6">
-        <label class="block  font-bold">
-          <input class="mr-2 leading-tight" type="checkbox" />
-          <span class="text-sm">Send me your newsletter!</span>
-        </label>
+      <div className="mb-6">
+        <div className="md:flex">
+          <label class="block  font-bold">
+            <input class="mr-2 leading-tight" type="checkbox" />
+            <span class="text-sm">Send me your newsletter!</span>
+          </label>
+        </div>
+        <p>Description</p>
       </div>
-      <div class="md:flex mb-6">
-        <label class="block  font-bold">
-          <input class="mr-2 leading-tight" type="checkbox" />
-          <span class="text-sm">Send me your newsletter!</span>
-        </label>
+      <div className="mb-6">
+        <div className="md:flex">
+          <label class="block  font-bold">
+            <input class="mr-2 leading-tight" type="checkbox" />
+            <span class="text-sm">Send me your newsletter!</span>
+          </label>
+        </div>
+        <p>Description</p>
       </div>
-      <div class="md:flex mb-6">
-        <label class="block  font-bold">
-          <input class="mr-2 leading-tight" type="checkbox" />
-          <span class="text-sm">Send me your newsletter!</span>
-        </label>
+      <div className="mb-6">
+        <div className="md:flex">
+          <label class="block  font-bold">
+            <input class="mr-2 leading-tight" type="checkbox" />
+            <span class="text-sm">Send me your newsletter!</span>
+          </label>
+        </div>
+        <p>Description</p>
       </div>
       <div class="grid md:grid-cols-5 mb-4">
         <button
@@ -65,13 +77,13 @@ export default function Content() {
           <div className="mt-5">
             <button
               type="button"
-              class="text-dark bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none "
+              className="text-dark bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none "
             >
               Cancel
             </button>
             <button
               type="button"
-              class="text-white bg-green-400 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none"
+              className="text-white bg-green-400 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
             >
               Save
             </button>
