@@ -3,43 +3,45 @@ export default function Content() {
   const [taskShow, setTaskShow] = useState(false);
   return (
     <div className="pl-7 pt-7">
-      <div class="grid grid-cols-5">
-        <button className="today mr-3 font-bold py-2 px-4 rounded">
+      <div class="grid md:grid-cols-5 ">
+        <button className="today mr-3 font-bold py-2 px-4 rounded mb-3">
           Today
         </button>
-        <button className="today mr-3 font-bold py-2 px-4 rounded">
+        <button className="today mr-3 font-bold py-2 px-4 rounded mb-3">
           Tomorrow
         </button>
-        <button className="today font-bold py-2 px-4 rounded">Next Week</button>
+        <button className="today font-bold py-2 px-4 rounded mb-3">
+          Next Week
+        </button>
       </div>
       <div className="mt-7">
         <p className="text-center">Project Name</p>
       </div>
       <div class="md:flex mb-6">
-        <label class="md:w-2/3 block  font-bold">
+        <label class="block  font-bold">
           <input class="mr-2 leading-tight" type="checkbox" />
           <span class="text-sm">Send me your newsletter!</span>
         </label>
       </div>
       <div class="md:flex mb-6">
-        <label class="md:w-2/3 block  font-bold">
+        <label class="block  font-bold">
           <input class="mr-2 leading-tight" type="checkbox" />
           <span class="text-sm">Send me your newsletter!</span>
         </label>
       </div>
       <div class="md:flex mb-6">
-        <label class="md:w-2/3 block  font-bold">
+        <label class="block  font-bold">
           <input class="mr-2 leading-tight" type="checkbox" />
           <span class="text-sm">Send me your newsletter!</span>
         </label>
       </div>
       <div class="md:flex mb-6">
-        <label class="md:w-2/3 block  font-bold">
+        <label class="block  font-bold">
           <input class="mr-2 leading-tight" type="checkbox" />
           <span class="text-sm">Send me your newsletter!</span>
         </label>
       </div>
-      <div class="grid grid-cols-5 mb-4">
+      <div class="grid md:grid-cols-5 mb-4">
         <button
           onClick={() => setTaskShow(!taskShow)}
           className="today mr-3 font-bold py-2 px-4 rounded"

@@ -77,18 +77,15 @@
 .mobile_side{
     width: 295px;
     height: auto;
+    background: #6E5CC2;
 }
 .mobile_side p{
-    /* background: linear-gradient(180deg, rgba(208, 41, 61, 0.92) 80.83%, rgba(208, 41, 61, 0) 100%); */
-    width: auto;
-    height: 37px;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 30px;
-    /* identical to box height */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
     text-align: center;
-    text-transform: capitalize;
-    color: #000;
+    color: #FFFFFF;
 }
 .mobile_side input{
     width: auto;
@@ -187,4 +184,12 @@ label span{
 .task_textarea{
     width: 385px;
     border-radius: 4px;
+}
+@media(max-width:540px){
+    .task_input{
+        width: auto;
+    }
+    .task_textarea{
+        width: auto;
+    }
 }

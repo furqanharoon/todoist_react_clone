@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { firebase } from "../config/firebase";
+import "firebase/firestore";
 import Content from "./Content";
 export default function IndexPage() {
   const [show, setShow] = useState(false);
@@ -23,6 +25,37 @@ export default function IndexPage() {
 
   //   }
   // }, [])
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("projects")
+      .onSnapshot((snapshot) => {
+        const resArray = [];
+        snapshot.docs.map((item, index) => {
+          resArray.push(item.data());
+        });
+        setprojects(resArray);
+      });
+  }, []);
+
+  const [inputValue, setinputValue] = useState("");
+  const [projects, setprojects] = useState([]);
+  const addToFirestore = async () => {
+    try {
+      console.log("hello", typeof firebase.firestore());
+      const res = await firebase.firestore().collection("projects").add({
+        title: inputValue,
+        username: "Hassan",
+        tasks: [],
+      });
+      console.log("firebase response", res);
+      setinputValue("");
+      setShow(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="w-full h-full bg-gray-200">
@@ -33,16 +66,9 @@ export default function IndexPage() {
               <li className="text-center pl- cursor-pointer text-white text-sm leading-3 tracking-normal pb-4 pt- text-indigo-700 focus:text-indigo-700 focus:outline-none">
                 <p className="mb-6">Projects</p>
                 <ul className="text- project_list">
-                  <li>One</li>
-                  <li>Two</li>
-                  <li>Three</li>
-                  <li>Four</li>
-                  <li>Five</li>
-                  <li>Six</li>
-                  <li>Seven</li>
-                  <li>Eight</li>
-                  <li>Nine</li>
-                  <li>Ten</li>
+                  {projects.map((item, index) => {
+                    return <li>{item.title}</li>;
+                  })}
                 </ul>
                 <button
                   onClick={() => setAddShow(!addShow)}
@@ -59,7 +85,8 @@ export default function IndexPage() {
                         className="mb-4 shadow appearance-none border rounded w-full w-44 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         placeholder="Project name"
-                        // onChange={(projectName) => setProjectName(projectName)}
+                        onChange={(e) => setinputValue(e.target.value)}
+                        value={inputValue}
                         // value={projectName}
                       />
                     </div>
@@ -67,7 +94,10 @@ export default function IndexPage() {
                       <button class="mr-3 bg-red-500  text-white font-bold py-2 px-4 rounded cancel_button">
                         Cancel
                       </button>
-                      <button class="bg-gray-500  text-white font-bold py-2 px-4 rounded save_button">
+                      <button
+                        onClick={() => addToFirestore()}
+                        class="bg-gray-500  text-white font-bold py-2 px-4 rounded save_button"
+                      >
                         Add
                       </button>
                     </div>
@@ -102,6 +132,18 @@ export default function IndexPage() {
                   <ul aria-orientation="vertical" className=" py-6">
                     <li className="text-center pl- cursor-pointer text-white text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
                       <p className="mb-6">Projects</p>
+                      <ul className="text- project_list">
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                        <li>Four</li>
+                        <li>Five</li>
+                        <li>Six</li>
+                        <li>Seven</li>
+                        <li>Eight</li>
+                        <li>Nine</li>
+                        <li>Ten</li>
+                      </ul>
                       <button
                         onClick={() => setAddShow(!addShow)}
                         className="mb-6 bg-blue-500  text-white font-bold py-2 px-4 rounded-full project_button"
