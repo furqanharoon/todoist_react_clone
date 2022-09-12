@@ -102,7 +102,7 @@
     /* identical to box height */
     text-align: center;
     text-transform: capitalize;
-    /* color: #FFFFFF; */
+    color: #000000;
 }
 .mobile_side .save_button{
     width: 110px;
