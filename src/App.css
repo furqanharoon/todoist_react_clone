@@ -76,7 +76,7 @@
 } */
 .mobile_side{
     width: 295px;
-    height: auto;
+    /* height: 100vh; */
     background: #6E5CC2;
 }
 .mobile_side p{
@@ -117,9 +117,6 @@
     text-transform: capitalize;
     color: #FFFFFF;
 }
-/* .mobile_side #hide_mob{
-    display: none;
-} */
 .project_list{
     /* padding-left: 120px; */
     cursor: pointer;
@@ -192,4 +189,10 @@ label span{
     .task_textarea{
         width: auto;
     }
+    /* .height__100vh{
+        height: auto !important;
+    } */
+}
+.active{
+    color: aquamarine;
 }

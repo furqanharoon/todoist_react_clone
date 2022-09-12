@@ -4,27 +4,24 @@ import "firebase/firestore";
 import Content from "./Content";
 export default function IndexPage() {
   const [show, setShow] = useState(false);
-  // const [profile, setProfile] = useState(false);
-  // const [menu, setMenu] = useState(false);
 
-  // const [projects, setprojects] = useState([
-  //   { name: "react" },
-  //   { name: "yes " },
-  // ]);
-  // const [menu1, setMenu1] = useState(false);
-  // const [menu2, setMenu2] = useState(false);
-  // const [menu3, setMenu3] = useState(false);
   const [addShow, setAddShow] = useState(false);
-  // const [projectName, setProjectName] = useState("");
-  // useEffect(() => {
-  // firebase().collection('projects').onSnapshot((snapshot)=>{
-  //  snapshot.exists
-  // })
+  const [selectedName, setselectedName] = useState();
+  const [inputValue, setinputValue] = useState("");
+  const [projects, setprojects] = useState([]);
+  const [selectedTasks, setselectedTasks] = useState([]);
+  const [selectedItem, setselectedItem] = useState({});
 
-  //   return () => {
+  useEffect(() => {
+    projects.map((item, index) => {
+      if (index === 0) {
+        setselectedItem(item);
+        return;
+      }
+      return;
+    });
+  }, [projects]);
 
-  //   }
-  // }, [])
   useEffect(() => {
     firebase
       .firestore()
@@ -32,14 +29,12 @@ export default function IndexPage() {
       .onSnapshot((snapshot) => {
         const resArray = [];
         snapshot.docs.map((item, index) => {
-          resArray.push(item.data());
+          resArray.push({ ...item.data(), docID: item.id });
         });
         setprojects(resArray);
       });
   }, []);
 
-  const [inputValue, setinputValue] = useState("");
-  const [projects, setprojects] = useState([]);
   const addToFirestore = async () => {
     try {
       console.log("hello", typeof firebase.firestore());
@@ -55,6 +50,9 @@ export default function IndexPage() {
       console.log(error);
     }
   };
+  const projectClicked = (item, index) => {
+    setselectedItem(item);
+  };
 
   return (
     <>
@@ -67,7 +65,11 @@ export default function IndexPage() {
                 <p className="mb-6">Projects</p>
                 <ul className="text- project_list">
                   {projects.map((item, index) => {
-                    return <li>{item.title}</li>;
+                    return (
+                      <li onClick={() => projectClicked(item, index)}>
+                        {item.title}
+                      </li>
+                    );
                   })}
                 </ul>
                 <button
@@ -134,7 +136,11 @@ export default function IndexPage() {
                       <p className="mb-6">Projects</p>
                       <ul className="text- project_list">
                         {projects.map((item, index) => {
-                          return <li>{item.title}</li>;
+                          return (
+                            <li onClick={() => projectClicked(item, index)}>
+                              {item.title}
+                            </li>
+                          );
                         })}
                       </ul>
                       <button
@@ -210,7 +216,11 @@ export default function IndexPage() {
                 )}
               </div>
             </nav>
-            <Content />
+            <Content
+              item={selectedItem}
+              name={selectedName}
+              tasks={selectedTasks}
+            />
             {/* Navigation ends */}
             {/* Remove class [ h-64 ] when adding a card block */}
           </div>
