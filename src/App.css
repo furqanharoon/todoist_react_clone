@@ -29,8 +29,8 @@
     background: #6E5CC2;
 }
 .height__100vh{
-    /* height: 100vh !important; */
-    height: auto;
+    height: 100vh !important;
+    /* height: auto; */
     padding-bottom: 50px;
 }
 .side_bar p{
@@ -76,7 +76,7 @@
 } */
 .mobile_side{
     width: 295px;
-    /* height: 100vh; */
+    height: 100vh;
     background: #6E5CC2;
 }
 .mobile_side p{
@@ -189,9 +189,9 @@ label span{
     .task_textarea{
         width: auto;
     }
-    /* .height__100vh{
+    .height__100vh{
         height: auto !important;
-    } */
+    }
 }
 .active{
     color: aquamarine;
