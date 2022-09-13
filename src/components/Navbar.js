@@ -70,10 +70,9 @@ export default function Example() {
                 </div> */}
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button type="button" className="rounded-full">
+                {/* <button type="button" className="rounded-full">
                   <img className="h-5 w-5 rounded-full" src={bell} alt="" />
-                </button>
-
+                </button> */}
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
