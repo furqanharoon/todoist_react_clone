@@ -80,12 +80,6 @@ export default function Content({ item = {}, name = "", tasks = [] }) {
           ></textarea> */}
           <div className="mt-5">
             <button
-              type="button"
-              className="text-dark bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none "
-            >
-              Cancel
-            </button>
-            <button
               onClick={() => addTask()}
               type="button"
               className="text-white bg-green-400 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"

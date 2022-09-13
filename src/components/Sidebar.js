@@ -93,9 +93,6 @@ export default function IndexPage() {
                       />
                     </div>
                     <div>
-                      <button className="mr-3 bg-gray-300  text-dark font-bold py-2 px-4 rounded cancel_button">
-                        Cancel
-                      </button>
                       <button
                         onClick={() => addToFirestore()}
                         className="bg-green-400 text-white font-bold py-2 px-4 rounded save_button"
@@ -163,9 +160,6 @@ export default function IndexPage() {
                             />
                           </div>
                           <div>
-                            <button className="mr-3 bg-gray-300 text-dark font-bold py-2 px-4 rounded cancel_button">
-                              Cancel
-                            </button>
                             <button
                               onClick={() => addToFirestore()}
                               className="bg-green-400 text-white font-bold py-2 px-4 rounded save_button"
