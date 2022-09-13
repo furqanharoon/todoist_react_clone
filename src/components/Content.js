@@ -4,7 +4,7 @@ import { firebase } from "../config/firebase";
 export default function Content({ item = {}, name = "", tasks = [] }) {
   const [taskShow, setTaskShow] = useState(false);
   const [title, settitle] = useState("");
-  const [description, setdescription] = useState("");
+  // const [description, setdescription] = useState("");
 
   const addTask = async () => {
     try {
@@ -13,11 +13,10 @@ export default function Content({ item = {}, name = "", tasks = [] }) {
         .collection("projects")
         .doc(item?.docID)
         .update({
-          tasks: firestore.FieldValue.arrayUnion({ title, description }),
+          tasks: firestore.FieldValue.arrayUnion({ title }),
         });
       console.log(res);
       settitle("");
-      setdescription("");
       setTaskShow(false);
     } catch (error) {
       console.log(error);
@@ -71,14 +70,14 @@ export default function Content({ item = {}, name = "", tasks = [] }) {
             placeholder="Task Name"
             value={title}
           />
-          <textarea
+          {/* <textarea
             onChange={(e) => setdescription(e.target.value)}
             id="message"
             value={description}
             rows="4"
             className="block p-2.5 rounded border focus:outline-none focus:shadow-outline task_textarea"
             placeholder="Task description"
-          ></textarea>
+          ></textarea> */}
           <div className="mt-5">
             <button
               type="button"
